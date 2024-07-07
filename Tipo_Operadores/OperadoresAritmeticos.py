@@ -1,6 +1,6 @@
 produto_1 = 10
 produto_2 = 20
-#                                             Ordem de Precedêcia
+
 print("Potênciação =", produto_1 ** produto_2)
 print("Divisão Interira =", produto_1 // produto_2)
 print("Multiplicação =", produto_1 * produto_2)
