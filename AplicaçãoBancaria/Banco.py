@@ -33,7 +33,7 @@ while True:
             lisDeposito.append(deposito)
             quantDeposito += 1
     elif option == 2:
-        while LimiteSaque < 3 and saque < 500.00:
+        while LimiteSaque < 3 and saque <= 500.00:
             quantSaque = float(input("Qual valor deseja sacar?: "))
             if quantSaque > 500.00:
                 print("Quantidade inválida, só é permitido saques até R$ 500,00, com limite de três saques diários.")
@@ -48,16 +48,16 @@ while True:
                     elif option == 0:
                         print("Obrigado por usar nosso sistema!")
                         break
+            elif quantSaque < 0:
+                print("Não é possível sacar valores negativos.")
+                continue
             else:
                 print("Contando as notas... Saque efetuado com sucesso! :)")
                 conta -= quantSaque
                 ValuesSaques.append(quantSaque)
                 saque += quantSaque
                 RetiradasSaques += 1
-                if saque == 500.00:
-                    LimiteSaque += 1
-                else:
-                    continue
+                LimiteSaque += 1
     elif option == 3:
         print("Valor em conta: R$ {}".format(conta))
         print("Quantidade de deposito efetuados: {},  e valores depositados: {}".format(quantDeposito, lisDeposito))
