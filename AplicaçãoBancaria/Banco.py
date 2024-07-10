@@ -25,6 +25,7 @@ while True:
     
     if option == 1:
         deposito = float(input("Qual valor deseja depositar?: "))
+        deposito = round(deposito, 2)
         if deposito < 0 :
             print("Valor inválido, digite um valor maior que 0")
             continue
@@ -35,6 +36,7 @@ while True:
     elif option == 2:
         while LimiteSaque < 3 and saque <= 500.00:
             quantSaque = float(input("Qual valor deseja sacar?: "))
+            quantSaque = round(quantSaque,2)
             if quantSaque > 500.00:
                 print("Quantidade inválida, só é permitido saques até R$ 500,00, com limite de três saques diários.")
                 continue
@@ -52,16 +54,16 @@ while True:
                 print("Não é possível sacar valores negativos.")
                 continue
             else:
-                print("Contando as notas... Saque efetuado com sucesso! :)")
+                print("Contando as notas... Saque no valor de R$ {:.2f} efetuado com sucesso! :)".format(quantSaque))
                 conta -= quantSaque
                 ValuesSaques.append(quantSaque)
                 saque += quantSaque
                 RetiradasSaques += 1
                 LimiteSaque += 1
     elif option == 3:
-        print("Valor em conta: R$ {}".format(conta))
-        print("Quantidade de deposito efetuados: {},  e valores depositados: {}".format(quantDeposito, lisDeposito))
-        print("Quantidade de saques realizados: {} e seus respectivos valores: {}".format(RetiradasSaques, ValuesSaques))
+        print("Valor em conta: R$ {:.2f}".format(conta))
+        print("Quantidade de deposito efetuados: {},  e valores depositados: {:.2f}".format(quantDeposito, lisDeposito))
+        print("Quantidade de saques realizados: {} e seus respectivos valores: {:.2f}".format(RetiradasSaques, ValuesSaques))
     elif option == 0:
         print("Obrigado por usar nosso sistema! :)")
         break
