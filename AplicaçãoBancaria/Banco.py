@@ -31,7 +31,7 @@ while True:
             continue
         else:
             saldo += deposito
-            lisDeposito.append(deposito)
+            lisDeposito.append("R$ " + str(deposito))
             quantDeposito += 1
     elif option == 2:
         while LimiteSaque < 3 and saque <= 500.00:
@@ -54,16 +54,16 @@ while True:
                 print("Não é possível sacar valores negativos.")
                 continue
             else:
-                print("saldondo as notas... Saque no valor de R$ {:.2f} efetuado com sucesso! :)".format(quantSaque))
+                print("saldondo as notas... Saque no valor de R$ {} efetuado com sucesso! :)".format(quantSaque))
                 saldo -= quantSaque
-                ValuesSaques.append(quantSaque)
+                ValuesSaques.append("R$"+ str(quantSaque))
                 saque += quantSaque
                 RetiradasSaques += 1
                 LimiteSaque += 1
     elif option == 3:
         print("Valor em saldo: R$ {:.2f}".format(saldo))
-        print("Quantidade de deposito efetuados: {},  e valores depositados: {:.2f}".format(quantDeposito, lisDeposito))
-        print("Quantidade de saques realizados: {} e seus respectivos valores: {:.2f}".format(RetiradasSaques, ValuesSaques))
+        print("Quantidade de deposito efetuados: {},  e valores depositados: {}".format(quantDeposito, lisDeposito))
+        print("Quantidade de saques realizados: {} e seus respectivos valores: {}".format(RetiradasSaques, ValuesSaques))
     elif option == 0:
         print("Obrigado por usar nosso sistema! :)")
         break
