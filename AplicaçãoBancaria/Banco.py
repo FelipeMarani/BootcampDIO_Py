@@ -18,9 +18,9 @@ menu = f"""
     [0]Fechar sistema
 
 """
-print(menu)
 
 while True:
+    print(menu)
     option = int(input(": "))
     
     if option == 1:
